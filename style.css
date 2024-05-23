@@ -1,0 +1,82 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;   
+}
+body {
+    font-family:'Poppins', sans-serif;
+    background-color: rgb(37, 37, 37);
+    height: 100%;
+}
+.hero-section{
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+.card-container {
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+}
+.card {
+    position: relative;
+    width: 250px;
+    transition: 0.3s ease;
+}
+.card-background::before {
+    content: "";
+    position: absolute;
+    background-color:rgba(0, 0, 0, 0.315) ;
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+}
+.card-background {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.9) saturate(1) contrast(1);
+    transform-origin: bottom;
+    transform: scale(1) translateZ(0);
+    transition: 0.3s ease;
+    width: 200px;
+    height: 300px;
+}
+.card:hover .card-background {
+    transform: scale(1.15) translateZ(0);
+    background-size: cover;
+}
+.card-container:hover .card:not(:hover) {
+    transform: scale(0.9);
+}
+.card-container:hover > .card:not(:hover) .card-background, .card-container:hover > .card:not(:hover) .card-members {
+    filter: brightness(0.5) saturate(0) contrast(1.2) blur(10px);
+}
+.content {
+    width: 100%;
+    top: 75%;
+    left: 0;
+    padding-left: 20px;
+    position: absolute;
+    padding-top: 200px;
+    color: white;
+}
+.card-members {
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.card-estalish {
+    color: white;
+    font-size: 25px;
+    line-height: 1;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
